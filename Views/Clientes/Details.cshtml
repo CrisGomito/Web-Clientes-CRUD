@@ -1,0 +1,71 @@
+@model Clientes.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalles del Cliente";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white">
+                    <h4><i class="bi bi-info-circle-fill"></i> Detalles del Cliente</h4>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.DocumentoIdentidad)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.DocumentoIdentidad)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Nombre)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Nombre)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Apellido)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Apellido)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Email)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Telefono)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Telefono)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Direccion)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Direccion)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Ciudad)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Ciudad)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.FechaNacimiento)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.FechaNacimiento)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.FechaRegistro)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.FechaRegistro)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.LimiteCredito)</dt>
+                        <dd class="col-sm-8">$@Html.DisplayFor(model => model.LimiteCredito)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.EstadoActivo)</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.EstadoActivo)
+                            {
+                                <span class="badge bg-success">Activo</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Inactivo</span>
+                            }
+                        </dd>
+                    </dl>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Volver
+                        </a>
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">
+                            <i class="bi bi-pencil"></i> Editar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
